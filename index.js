@@ -38,11 +38,20 @@ function getPhoneNumbers(size) {
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
 async function assignPhoneToUsers() {
+    
+    let n = 0;
+    const array=[];
+while (n < users.length) {
     const results = await getPhoneNumbers(1);
-    // fill me with the necessary logic to add phone for each users.
+    array.push(results.contents.phonenumbers[0]);
+      n++;
+  }
+return console.log(users.map((user,index) => ({...user,phone : array[index]})));
+   // fill me with the necessary logic to add phone for each users.
 }
+
+
 
 (async () => {
     await assignPhoneToUsers();
 })();
-
