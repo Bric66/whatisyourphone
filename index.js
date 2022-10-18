@@ -1,5 +1,7 @@
 const users = require('./users.json');
 
+// https://developer.mozilla.org/fr/docs/Learn/JavaScript/Asynchronous/Introducing
+
 // Don't modify this function. You must use it and work with what this function returns.
 function getPhoneNumbers(size) {
     const createPhoneNumber = function() {
@@ -10,7 +12,8 @@ function getPhoneNumbers(size) {
         }
         return format;
     }
-    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+
+    // https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Using_promises
     return new Promise((resolve, reject) => {
         try {
             const length = Math.min(10, size);
